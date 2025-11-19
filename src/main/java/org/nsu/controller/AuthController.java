@@ -7,8 +7,8 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
 import org.nsu.service.GitHubService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
@@ -19,14 +19,10 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/v1/auth")
 @Tag(name = "Authentication & Git Integration", description = "User authentication and GitHub repository management")
+@RequiredArgsConstructor
 public class AuthController {
 
     private final GitHubService gitHubService;
-
-    @Autowired
-    public AuthController(GitHubService gitHubService) {
-        this.gitHubService = gitHubService;
-    }
 
     @Operation(
             summary = "Get current user profile",

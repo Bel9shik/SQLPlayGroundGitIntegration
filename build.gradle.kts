@@ -29,6 +29,8 @@ dependencies {
     implementation("javax.validation:validation-api:$javaxValidationVersion")
     implementation("org.hibernate.validator:hibernate-validator:$hibernateValidatorVersion")
     implementation("com.h2database:h2")
+    // Поддержка .env файлов
+    implementation("me.paulschwarz:spring-dotenv:4.0.0")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.security:spring-security-test")
     testImplementation(platform("org.junit:junit-bom:$junitBomVersion"))
